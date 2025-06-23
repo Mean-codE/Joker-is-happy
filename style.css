@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url(assets/nik-NYpOl-PJDkM-unsplash.jpg);
+  background-size: cover;
+}
+
+main {
+  position: relative;
+  width: 100rem;
+  filter: blur();
+  height: 60rem;
+  backdrop-filter: blur(30px);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  transition: all 0.75s;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 700;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.score {
+  font-size: 10rem;
+
+  margin: auto;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: bisque;
+  width: 65%;
+  padding: 2rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.current-label {
+  font-size: 1.7rem;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+.player-active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  -moz-transition: all 0.15s;
+  -ms-transition: all 0.15s;
+  -o-transition: all 0.15s;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+.button-new {
+  top: 4rem;
+  padding: 1.3rem 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background-color: #d87d41;
+  border: 0;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: white;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+}
+
+.button-roll {
+  top: 39.3rem;
+  padding: 1.1rem 4rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background-color: #ffb347;
+  border: 0;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: white;
+  /* background: linear-gradient(to right bottom, #d87d41 0%, #ffb347 100%); */
+  transition: background 0.75s, color 0.785s;
+  -webkit-transition: background 0.75s, color 0.785s;
+  -moz-transition: background 0.75s, color 0.785s;
+  -ms-transition: background 0.75s, color 0.785s;
+  -o-transition: background 0.75s, color 0.785s;
+}
+
+.button-roll:hover {
+  background-color: #eb5273;
+}
+
+.button-hold {
+  top: 46.1rem;
+  padding: 1.3rem 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background-color: #d87d41;
+  border: 0;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.card {
+  position: absolute;
+  max-width: 15rem;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  top: 25%;
+}
+
+.card1 {
+  z-index: 10;
+}
+
+.card2 {
+  z-index: 5;
+  transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  -moz-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+}
+
+.card3 {
+  z-index: 3;
+  left: 35%;
+  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+}
