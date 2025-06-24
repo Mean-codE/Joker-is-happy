@@ -6,12 +6,15 @@ const player1 = document.querySelector(`.player0`);
 const player2 = document.querySelector(`.player1`);
 const holdCard = document.querySelector(`.button-hold`);
 const endGame = document.querySelector(`.button-end`);
-const newGame = document.querySelector(`.button-new`);
+const newGame = document.querySelector(`.button-new-game`);
 const score0 = document.querySelector(`#score-0`);
 const score1 = document.querySelector(`#score-1`);
 const card1 = document.querySelector(`.card1`);
 const card2 = document.querySelector(`.card2`);
 const card3 = document.querySelector(`.card3`);
+const winner = document.querySelector(`.winner`);
+const winnerPlayer = document.querySelector(`.winner-player`);
+const winnerScore = document.querySelector(`.winner-score`);
 
 //Starting Condition
 let currentScore = 0;
@@ -77,26 +80,9 @@ holdCard.addEventListener(`click`, function () {
   card3.src = `assets/back.svg`;
 });
 
-//New game
-newGame.addEventListener(`click`, function () {
-  currentScore = 0;
-  score0.textContent = 0;
-  score1.textContent = 0;
-  current0.textContent = 0;
-  current1.textContent = 0;
-  previousCard = [];
-  playersHighScore = [0, 0];
-  playerActive = 0;
-  document
-    .querySelector(`.player${playerActive}`)
-    .classList.add(`player-active`);
-  document
-    .querySelector(`.player${playerActive + 1}`)
-    .classList.remove(`player-active`);
-});
-
 //End game
 endGame.addEventListener(`click`, function () {
+  let winnerplayer = playersScore[0] > playersScore[1] ? 1 : 2;
   card1.style.zIndex = "1";
   setTimeout(function () {
     card3.src = `assets/card-${3}.svg`;
@@ -113,12 +99,42 @@ endGame.addEventListener(`click`, function () {
   }, 6000);
   setTimeout(function () {
     card1.src = `assets/card-count2.svg`;
+    card1.classList.toggle(`card1position`);
   }, 7000);
   setTimeout(function () {
     card1.src = `assets/card-count3.svg`;
   }, 7500);
   setTimeout(function () {
     card1.src = `assets/card-${1}.svg`;
+    setTimeout(function () {
+      winner.classList.add(`show`);
+      winnerPlayer.textContent = `player${winnerplayer}`;
+      winnerScore.textContent = playersScore[winnerplayer - 1];
+    }, 500);
   }, 8000);
-  let winner = playersScore[0] > playersScore[1] ? 0 : 1;
+});
+
+//New game
+newGame.addEventListener(`click`, function () {
+  currentScore = 0;
+  score0.textContent = 0;
+  score1.textContent = 0;
+  current0.textContent = 0;
+  current1.textContent = 0;
+  previousCard = [];
+  playersHighScore = [0, 0];
+  playerActive = 0;
+  document
+    .querySelector(`.player${playerActive}`)
+    .classList.add(`player-active`);
+  document
+    .querySelector(`.player${playerActive + 1}`)
+    .classList.remove(`player-active`);
+  winner.classList.remove(`show`);
+  card1.src = `assets/back.svg`;
+  card2.src = `assets/back.svg`;
+  card3.src = `assets/back.svg`;
+  card2.classList.toggle(`card2-end-game`);
+  card3.classList.toggle(`card3-end-game`);
+  card1.classList.toggle(`card1-end-game`);
 });

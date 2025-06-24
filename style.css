@@ -126,6 +126,32 @@ button:hover {
   -o-border-radius: 1.5rem;
 }
 
+.button-new-game {
+  bottom: 9rem;
+  padding: 1.3rem 5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background-color: #eb5273;
+  border: 0;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: white;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+  transition: all 0.75s;
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
+}
+
+.button-new-game:hover {
+  background-color: #ffb347;
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+}
+
 .button-roll {
   top: 39.3rem;
   padding: 1.1rem 4rem;
@@ -180,6 +206,10 @@ button:hover {
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
 }
+
+/* .card1position {
+  left: 53%;
+} */
 
 .card2 {
   z-index: 5;
@@ -265,5 +295,62 @@ button:hover {
   color: #ffd700;
 }
 
-.hidden {
+/* winner */
+.winner {
+  background: linear-gradient(
+    to bottom right,
+    rgba(139, 0, 0, 0.824),
+    rgba(255, 217, 0, 0.463)
+  );
+  padding: 9rem;
+  z-index: 100;
+  position: absolute;
+  width: 100rem;
+  filter: blur();
+  height: 60rem;
+  backdrop-filter: blur(50px);
+  box-shadow: 0 3rem 5rem rgba(226, 107, 107, 0.75);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-filter: blur();
+  transition: all 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in, visibility 0.5s ease-in;
+}
+
+.winner.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.player-winner {
+  font-size: 5rem;
+  font-weight: 700;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.winner-player {
+  font-size: 4rem;
+  font-weight: 700;
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
+
+.winner-score {
+  font-size: 10rem;
+  margin-top: 2rem;
 }
