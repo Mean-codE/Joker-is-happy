@@ -165,15 +165,20 @@ button:hover {
   max-width: 15rem;
   left: 50%;
   transform: translate(-50%);
+  top: 25%;
   -webkit-transform: translate(-50%);
   -moz-transform: translate(-50%);
   -ms-transform: translate(-50%);
   -o-transform: translate(-50%);
-  top: 25%;
 }
 
 .card1 {
   z-index: 10;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
 
 .card2 {
@@ -183,6 +188,11 @@ button:hover {
   -moz-transform: rotate(15deg);
   -ms-transform: rotate(15deg);
   -o-transform: rotate(15deg);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
 }
 
 .card3 {
@@ -193,4 +203,67 @@ button:hover {
   -moz-transform: rotate(-15deg);
   -ms-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+}
+
+.card1-end-game {
+  top: 27%;
+  transform: scale(2) translate(-23%);
+  -webkit-transform: scale(2) translate(-23%);
+  -moz-transform: scale(2) translate(-23%);
+  -ms-transform: scale(2) translate(-23%);
+  -o-transform: scale(2) translate(-23%);
+}
+
+.card2-end-game {
+  top: 28%;
+  transform: scale(2) rotate(15deg);
+  -webkit-transform: scale(2) rotate(15deg);
+  -moz-transform: scale(2) rotate(15deg);
+  -ms-transform: scale(2) rotate(15deg);
+  -o-transform: scale(2) rotate(15deg);
+}
+
+.card3-end-game {
+  top: 28%;
+  transform: scale(2) rotate(-15deg);
+  -webkit-transform: scale(2) rotate(-15deg);
+  -moz-transform: scale(2) rotate(-15deg);
+  -ms-transform: scale(2) rotate(-15deg);
+  -o-transform: scale(2) rotate(-15deg);
+}
+
+.button-end {
+  top: 53.1rem;
+  padding: 1.3rem 7rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background-color: #8b0000;
+  border: 0;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s ease-in, box-shadow 0.3s ease-in,
+    color 0.3s ease-in;
+  -webkit-transition: background 0.3s ease-in, box-shadow 0.3s ease-in,
+    color 0.3s ease-in;
+  -moz-transition: background 0.3s ease-in, box-shadow 0.3s ease-in,
+    color 0.3s ease-in;
+  -ms-transition: background 0.3s ease-in, box-shadow 0.3s ease-in,
+    color 0.3s ease-in;
+  -o-transition: background 0.3s ease-in, box-shadow 0.3s ease-in,
+    color 0.3s ease-in;
+}
+
+.button-end:hover {
+  background: linear-gradient(to bottom right, #b22222, #ffd700);
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
+  color: #ffd700;
+}
+
+.hidden {
 }
