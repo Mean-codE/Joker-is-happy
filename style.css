@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +38,7 @@ main {
   -moz-border-radius: 9px;
   -ms-border-radius: 9px;
   -o-border-radius: 9px;
+  font-family: "Poppins", sans-serif;
 }
 
 .player {
@@ -56,15 +59,25 @@ main {
   font-weight: 700;
   word-spacing: 2px;
   letter-spacing: 1px;
+  color: #ffd700;
+  text-shadow: 0 0 2px #b22222;
 }
 
 .score {
   font-size: 10rem;
+  text-shadow: 1px 1px 2px #ffd700;
 
+  color: white;
   margin: auto;
 }
 
 .current {
+  background: linear-gradient(
+    to bottom right,
+    #f3e5ab,
+    #ffe4b5
+  ); /* kuning muda gradasi */
+  box-shadow: 0 0.4rem 1rem rgba(255, 223, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,6 +98,9 @@ main {
 
 .current-score {
   font-size: 3.5rem;
+  text-shadow: 1px 1px 2px #ffd700;
+  font-weight: 700;
+  color: #8b0000;
 }
 
 .player-active {
@@ -108,22 +124,6 @@ button {
 
 button:hover {
   background-color: transparent;
-}
-
-.button-new {
-  top: 4rem;
-  padding: 1.3rem 1.5rem;
-  font-size: 1.7rem;
-  font-weight: 600;
-  background-color: #d87d41;
-  border: 0;
-  border-radius: 1.5rem;
-  cursor: pointer;
-  color: white;
-  -webkit-border-radius: 1.5rem;
-  -moz-border-radius: 1.5rem;
-  -ms-border-radius: 1.5rem;
-  -o-border-radius: 1.5rem;
 }
 
 .button-new-game {
@@ -341,10 +341,14 @@ button:hover {
   font-weight: 700;
   word-spacing: 2px;
   letter-spacing: 1px;
+  color: #ffd700;
+  text-shadow: 0 0 2px #b22222;
 }
 
 .winner-player {
   font-size: 4rem;
+  color: #ffd700;
+  text-shadow: 0 0 2px #b22222;
   font-weight: 700;
   word-spacing: 2px;
   letter-spacing: 1px;
@@ -352,5 +356,7 @@ button:hover {
 
 .winner-score {
   font-size: 10rem;
+  color: #ffd700;
+  text-shadow: 0 0 2px #b22222;
   margin-top: 2rem;
 }

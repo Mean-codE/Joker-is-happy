@@ -23,6 +23,7 @@ let previousCard = [];
 let playersHighScore = [0, 0];
 let playersScore = [0, 0];
 let playing = true;
+let winnerPlayerScore;
 
 //Toogle Function
 const toogle = function () {
@@ -32,6 +33,19 @@ const toogle = function () {
   playerActive = playerActive === 0 ? 1 : 0;
   player1.classList.toggle(`player-active`);
   player2.classList.toggle(`player-active`);
+};
+
+//deciding the winner
+const winnerplayer = function () {
+  if (playersScore[0] > playersScore[1]) {
+    winnerPlayerScore = 1;
+    return `PLAYER 1`;
+  } else if (playersScore[0] < playersScore[1]) {
+    winnerPlayerScore = 2;
+    return `PLAYER 2`;
+  } else {
+    return `DRAW`;
+  }
 };
 
 //Roll Card
@@ -82,36 +96,40 @@ holdCard.addEventListener(`click`, function () {
 
 //End game
 endGame.addEventListener(`click`, function () {
-  let winnerplayer = playersScore[0] > playersScore[1] ? 1 : 2;
-  card1.style.zIndex = "1";
-  setTimeout(function () {
-    card3.src = `assets/card-${3}.svg`;
-    card3.classList.toggle(`card3-end-game`);
-  }, 2000);
-  setTimeout(function () {
-    card2.src = `assets/card-${2}.svg`;
-    card2.classList.toggle(`card2-end-game`);
-  }, 4000);
-  setTimeout(function () {
-    card1.src = `assets/card-count1.svg`;
-    card1.classList.toggle(`card1-end-game`);
-    card1.style.zIndex = "20";
-  }, 6000);
-  setTimeout(function () {
-    card1.src = `assets/card-count2.svg`;
-    card1.classList.toggle(`card1position`);
-  }, 7000);
-  setTimeout(function () {
-    card1.src = `assets/card-count3.svg`;
-  }, 7500);
-  setTimeout(function () {
-    card1.src = `assets/card-${1}.svg`;
+  if (!(playersScore[0] && playersScore[1])) {
+    alert(`you must roll card first`);
+    playing = false;
+  } else {
+    card1.style.zIndex = "1";
     setTimeout(function () {
-      winner.classList.add(`show`);
-      winnerPlayer.textContent = `player${winnerplayer}`;
-      winnerScore.textContent = playersScore[winnerplayer - 1];
-    }, 500);
-  }, 8000);
+      card3.src = `assets/card-${3}.svg`;
+      card3.classList.toggle(`card3-end-game`);
+    }, 2000);
+    setTimeout(function () {
+      card2.src = `assets/card-${2}.svg`;
+      card2.classList.toggle(`card2-end-game`);
+    }, 4000);
+    setTimeout(function () {
+      card1.src = `assets/card-count1.svg`;
+      card1.classList.toggle(`card1-end-game`);
+      card1.style.zIndex = "20";
+    }, 6000);
+    setTimeout(function () {
+      card1.src = `assets/card-count2.svg`;
+      card1.classList.toggle(`card1position`);
+    }, 7000);
+    setTimeout(function () {
+      card1.src = `assets/card-count3.svg`;
+    }, 7500);
+    setTimeout(function () {
+      card1.src = `assets/card-${1}.svg`;
+      setTimeout(function () {
+        winner.classList.add(`show`);
+        winnerPlayer.textContent = `${winnerplayer()}`;
+        winnerScore.textContent = playersScore[winnerPlayerScore - 1];
+      }, 500);
+    }, 8000);
+  }
 });
 
 //New game
