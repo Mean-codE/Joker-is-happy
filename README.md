@@ -10,7 +10,7 @@ In this version, you're not rolling dice — you're drawing **playing cards** fr
 
 ## 🎮 Live Demo
 
-👉 [Play Now on Netlify](https://joker-is-happy.netlify.app)
+👉 [Play Now on Netlify](https://jokerishappy-handyarifin.netlify.app/)
 
 ---
 
